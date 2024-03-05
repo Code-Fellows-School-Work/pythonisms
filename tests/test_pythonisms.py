@@ -2,6 +2,7 @@ import pytest
 
 from pythonisms_lab.script import Stack
 
+
 def test_for_in():
 
     foods = Stack(("apple", "banana", "cucumber"))
