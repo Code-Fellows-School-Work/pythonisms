@@ -31,12 +31,22 @@ def execution_time(func):
         return function
     return wrapper
 
+
+def convert_set(func):
+    def wrapper(*args, **kwargs):
+        string = func(*args, **kwargs)
+        string_set = set(string)
+        return string_set
+    return wrapper
+
 # @delay
 # @debug
+# @execution_time
+# @convert_set
 
 
-@execution_time
 def example(text):
+
     return text
 
 
