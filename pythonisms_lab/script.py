@@ -40,6 +40,9 @@ class Stack:
     def to_set(self):
         "Converts to a set data structure"
         return set(self.__iter__())
+    
+    def __eq__(self, other):
+        return list(self) == list(other)
 
     def push(self, value):
         """

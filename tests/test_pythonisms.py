@@ -36,3 +36,11 @@ def test_set():
         foods_list.append(food)
 
     assert set(foods_list) == {"apple", "banana", "cucumber"}
+
+
+def test_equal_stacks():
+
+    stack1 = Stack(("apple", "banana", "cucumber"))
+    stack2 = Stack(("apple", "banana", "cucumber"))
+
+    assert stack1 == stack2
