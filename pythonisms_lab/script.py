@@ -35,7 +35,8 @@ class Stack:
             yield current.value
             current = current.next
 
-        
+    def to_set(self):
+        return set(self.__iter__())
 
     def push(self, value):
         """
