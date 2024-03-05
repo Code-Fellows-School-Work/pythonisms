@@ -29,22 +29,33 @@ def execution_time(func):
         end_time = time.time()
         print(f"Execution time of {function}: {end_time - start_time}")
         return function
+    
     return wrapper
 
 
 def convert_set(func):
+    "Converts input string into a set"
     def wrapper(*args, **kwargs):
         string = func(*args, **kwargs)
         string_set = set(string)
         return string_set
+    
     return wrapper
+
+def validate_string(func):
+    def wrapper(*args, **kwargs):
+        validate = func(*args, **kwargs)
+        return isinstance(validate, str)
+    
+    return wrapper
+
 
 # @delay
 # @debug
 # @execution_time
 # @convert_set
 
-
+@validate_string
 def example(text):
 
     return text
