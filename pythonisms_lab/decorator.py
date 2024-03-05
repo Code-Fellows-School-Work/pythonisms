@@ -1,9 +1,10 @@
 from functools import wraps
 from time import sleep
+import time
 
 
 def delay(func):
-    "Add time delay to rendered text"
+    "Adds time delay to rendered text"
     def wrapper(*args, **kwargs):
         sleep(3)
         return func(*args, **kwargs)
@@ -12,6 +13,7 @@ def delay(func):
 
 
 def debug(func):
+    "Helps with debugging issues"
     def wrapper(*args, **kwargs):
         problem = func(*args, **kwargs)
         return "This is the problem " + problem
@@ -19,8 +21,21 @@ def debug(func):
     return wrapper
 
 
+def execution_time(func):
+    "Returns the execution time of a function"
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        function = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Execution time of {function}: {end_time - start_time}")
+        return function
+    return wrapper
+
 # @delay
-@debug
+# @debug
+
+
+@execution_time
 def example(text):
     return text
 
