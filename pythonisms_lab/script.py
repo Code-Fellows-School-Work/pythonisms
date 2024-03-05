@@ -20,22 +20,25 @@ class Stack:
     """
 
     def __init__(self, collection=None):
+        "Modified initalizer to allow stack nodes to be iterable"
         self.top = None
         if collection:
             for item in reversed(collection):
                 self.insert(item)
 
     def insert(self, value):
+        "Helper method to allow stack nodes to be iterable"
         self.top = Node(value, self.top)
 
     def __iter__(self):
-
+        "Helper method to allow stack nodes to be iterable"
         current = self.top
         while current:
             yield current.value
             current = current.next
 
     def to_set(self):
+        "Converts to a set data structure"
         return set(self.__iter__())
 
     def push(self, value):

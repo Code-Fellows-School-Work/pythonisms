@@ -43,6 +43,7 @@ def convert_set(func):
     return wrapper
 
 def validate_string(func):
+    "Validates if input is a string and returns a boolean"
     def wrapper(*args, **kwargs):
         validate = func(*args, **kwargs)
         return isinstance(validate, str)
