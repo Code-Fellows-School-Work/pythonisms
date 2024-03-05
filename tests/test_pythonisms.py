@@ -13,3 +13,13 @@ def test_for_in():
         foods_list.append(food)
 
     assert foods_list == ["apple", "banana", "cucumber"]
+
+def test_list_comprehension():
+
+    foods = Stack(("apple", "banana", "cucumber"))
+
+    foods_list = []
+
+    [foods_list.append(food) for food in foods]
+
+    assert foods_list == ["apple", "banana", "cucumber"]
