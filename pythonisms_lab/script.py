@@ -1,3 +1,5 @@
+# Copied Stack implementation from Data Structures and Algorithms Repository
+
 class InvalidOperationError(Exception):
     pass
 
@@ -42,7 +44,15 @@ class Stack:
         return set(self.__iter__())
     
     def __eq__(self, other):
+        "Checks if two stacks are equal and returns a boolean"
         return list(self) == list(other)
+    
+    def __bool__(self):
+        """
+        If stack is empty, returns False
+        If stack is not empty, returns True
+        """
+        return not self.is_empty()
 
     def push(self, value):
         """
@@ -82,6 +92,3 @@ class Stack:
                 "Method not allowed on empty collection")
 
         return self.top.value
-        # else:
-        #     value = self.top.value
-        #     return value

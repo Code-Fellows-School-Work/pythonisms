@@ -38,9 +38,31 @@ def test_set():
     assert set(foods_list) == {"apple", "banana", "cucumber"}
 
 
-def test_equal_stacks():
+def test_equal_stacks_success():
 
     stack1 = Stack(("apple", "banana", "cucumber"))
     stack2 = Stack(("apple", "banana", "cucumber"))
 
     assert stack1 == stack2
+
+
+def test_equal_stacks_failure():
+
+    stack1 = Stack(("apple", "banana", "cucumber"))
+    stack2 = Stack(("cherries", "avocados", "pineapples"))
+
+    assert stack1 != stack2
+
+
+def test_boolean_non_empty_stack():
+
+    stack1 = Stack(("apple", "banana", "cucumber"))
+
+    assert bool(stack1) == True
+
+
+def test_boolean_empty_stack():
+
+    stack1 = Stack()
+
+    assert bool(stack1) == False
