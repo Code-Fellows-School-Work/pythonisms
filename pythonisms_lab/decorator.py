@@ -55,8 +55,7 @@ def validate_string(func):
 # @debug
 # @execution_time
 # @convert_set
-
-@validate_string
+# @validate_string
 def example(text):
 
     return text
